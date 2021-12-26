@@ -26,6 +26,7 @@ function App() {
 
 
     setCards(shuffledCards)
+    setTurns(0);
   }
 
   console.log(cards)
@@ -39,7 +40,10 @@ function App() {
         {/* render cards */}
         {
           cards.map((card) => (
-            <SingleCard card={card} />
+            <SingleCard
+              card={card}
+              flipped={true}
+            />
           ))
         }
 

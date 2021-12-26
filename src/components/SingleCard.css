@@ -1,5 +1,5 @@
 .card{
-
+    position: relative;
 }
 
 .card img{
@@ -7,4 +7,24 @@
     display: block;
     border: 1px solid grey;
     border-radius: 2px;
+}
+/* style front of card before is clicked */
+.card .front{
+    transform: rotateY(90deg);
+    position: absolute;
+}
+/* style front of card WHEN is clicked */
+.card .flipped .front{
+    transform: rotateY(0deg);
+}
+
+
+/* style back of card before is clicked */
+.card .back{
+
+}
+/* style back of card WHEN is clicked */
+.card .flipped .back{
+    /* hide back card when we flip card to opposite site (front) */
+    transform: rotateY(90deg);
 }
