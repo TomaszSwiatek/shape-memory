@@ -1,0 +1,28 @@
+.App{
+  max-width: 890px;
+  margin: 20px auto;
+
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px
+}
+
+button.new-game {
+  padding: 10px 20px;
+  color: grey;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid grey;
+  margin-bottom: 40px;
+
+  transition: 0.2s ;
+}
+
+button.new-game:hover {
+color: white;
+background: grey;
+
+}
