@@ -18,6 +18,7 @@ function App() {
   const [cards, setCards] = useState([])
   const [choiceOne, setChoiceOne] = useState(null)
   const [choiceTwo, setChoiceTwo] = useState(null)
+  const [disabled, setDisabled] = useState(false)
 
   const shuffleCards = () => {
 
@@ -41,13 +42,17 @@ function App() {
   }
 
   const resetTurn = () => {
-    setTurns(prevTurn => prevTurn++)
+    setTurns(prevTurn => prevTurn + 1)
     setChoiceOne(null)
     setChoiceTwo(null)
+    setDisabled(false)
+
   }
 
   useEffect(() => {
     if (choiceOne && choiceTwo) {
+      // block possibility to choose card
+      setDisabled(true)
       // if two cards match map through each item, and if src property is equal to choiceOne/choiceTwo(same) then change matched property to true
       if (choiceOne.src === choiceTwo.src) {
         setCards(prevCards => prevCards.map((card) => {
@@ -58,14 +63,13 @@ function App() {
           }
         }
         ))
-        resetTurn()
+        setTimeout(() => resetTurn(), 1000)
       } else {
         setTimeout(() => resetTurn(), 1000)
       }
     }
 
     console.log(cards)
-    // console.log("choice one:" + choiceOne, "choice two:" + choiceTwo)
   }, [choiceOne, choiceTwo])
 
   return (
@@ -81,6 +85,7 @@ function App() {
               card={card}
               flipped={card === choiceOne || card === choiceTwo || card.matched}
               handleChoice={handleChoice}
+              disabled={disabled}
             />
           ))
         }
