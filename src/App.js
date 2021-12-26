@@ -79,7 +79,7 @@ function App() {
           cards.map((card) => (
             <SingleCard
               card={card}
-              flipped={true}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
               handleChoice={handleChoice}
             />
           ))
