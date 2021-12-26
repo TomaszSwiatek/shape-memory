@@ -5,8 +5,8 @@
 .card img{
     width: 100%;
     display: block;
-    border: 1px solid grey;
-    border-radius: 2px;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
 }
 /* style front of card before is clicked */
 .card .front{
@@ -14,19 +14,25 @@
     position: absolute;
     top: 0;
     left: 0;
+
+    transition: 0.3s;
+
 }
 /* style front of card WHEN is clicked */
 .card .flipped .front{
     transform: rotateY(0deg);
+    transition-delay: 0.3s;
 }
 
 
 /* style back of card before is clicked */
 .card .back{
-
+    transition: 0.3s;
+    transition-delay: 0.3s;
 }
 /* style back of card WHEN is clicked */
 .card .flipped .back{
     /* hide back card when we flip card to opposite site (front) */
     transform: rotateY(90deg);
+    transition-delay: 0s;
 }

@@ -69,12 +69,14 @@ function App() {
       }
     }
 
-    console.log(cards)
+
   }, [choiceOne, choiceTwo])
 
   return (
     <div className="App">
       <h2>Shape memory</h2>
+      <h4 >Match the cards as quickly as possible</h4>
+
       <button className="new-game" onClick={shuffleCards}>New game</button>
       <div className="card-grid">
 
@@ -82,6 +84,7 @@ function App() {
         {
           cards.map((card) => (
             <SingleCard
+              key={card.id}
               card={card}
               flipped={card === choiceOne || card === choiceTwo || card.matched}
               handleChoice={handleChoice}
@@ -91,8 +94,9 @@ function App() {
         }
 
       </div>
-      <p>turns: {turns}</p>
-    </div>
+      <p>Turns: {turns}</p>
+
+    </div >
   );
 }
 

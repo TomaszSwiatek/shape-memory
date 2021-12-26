@@ -3,7 +3,14 @@
   margin: 20px auto;
 
 }
+.App h2 {
+  margin-bottom: 0;
+}
 
+.App h4{
+  margin-top: 0;
+  font-weight: normal;
+}
 .card-grid{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -16,7 +23,7 @@ button.new-game {
   background: white;
   border-radius: 6px;
   border: 1px solid grey;
-  margin-bottom: 40px;
+  margin: 40px 0;
 
   transition: 0.2s ;
 }
@@ -24,5 +31,5 @@ button.new-game {
 button.new-game:hover {
 color: white;
 background: grey;
-
 }
+
